@@ -39,7 +39,9 @@ function Quizes (){
                     <iframe
                       width="100%"
                       height="100%"
-                      src={quiz.url}
+                      src={`https://www.youtube.com/embed/${quiz.url
+                        .trim()
+                        .replace("https://youtu.be/", "")}`}
                       title="YouTube video player"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -67,11 +67,12 @@ function Info ({ currentQuiz }){
             <Input
               id="url"
               name="url"
-              placeholder="url"
+              placeholder="https://youtu.be/yEHb0t5vt7E"
               type="url"
               value={currentQuiz.url}
               onChange={e => change("url", e.target.value)}
             />
+            <FormText>Click share then copy the link</FormText>
           </Col>
         </FormGroup>
         <FormGroup row>
