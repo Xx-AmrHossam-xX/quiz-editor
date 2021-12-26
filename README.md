@@ -1,7 +1,7 @@
 # quiz-editor
 A project to create and edit quizes
 ## Todo
-* Manipulate the url of the user
-* Add Validation
+* Test App for bugs
 * Make proper UI
+* Add Validation
 * Refactor
