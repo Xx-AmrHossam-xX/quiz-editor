@@ -1,7 +1,6 @@
 # quiz-editor
 A project to create and edit quizes
-##Todo
-* Add Date in Edit and Add
+## Todo
 * Manipulate the url of the user
 * Add Validation
 * Make proper UI
