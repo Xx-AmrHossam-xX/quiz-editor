@@ -9,7 +9,10 @@ const defaultVal = {
 
 function quizes (state = defaultVal, action){
   let newData;
-  let currentQuizWithIds;
+  const currentDate =
+    new Date().toLocaleDateString("en-US").replace(/\//g, "-") +
+    " " +
+    new Date().toLocaleTimeString("en-US");
   switch (action.type) {
     case SET_CURRENT_QUIZ:
       newData = update(state, {
@@ -24,9 +27,12 @@ function quizes (state = defaultVal, action){
           tempQuestionsAnswers[i].answers[j].id = uuid();
         }
       }
-      currentQuizWithIds = update(state, {
+
+      const currentQuizWithIds = update(state, {
         currentQuiz: {
           id: { $set: uuid() },
+          created: { $set: currentDate },
+          modified: { $set: currentDate },
           questions_answers: { $set: tempQuestionsAnswers },
         },
       });
@@ -42,8 +48,15 @@ function quizes (state = defaultVal, action){
           break;
         }
       }
+      const currentQuizWithDate = update(state, {
+        currentQuiz: {
+          modified: { $set: currentDate },
+        },
+      });
       newData = update(state, {
-        quizes: { $splice: [ [ requiredIndex, 1, state.currentQuiz ] ] },
+        quizes: {
+          $splice: [ [ requiredIndex, 1, currentQuizWithDate.currentQuiz ] ],
+        },
       });
 
       return newData;

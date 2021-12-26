@@ -31,12 +31,9 @@ function Quizes (){
             <button
               onClick={() => navigate(`/quizes/${quiz.id}`)}
               className="quiz-button"
+              key={quiz.id}
             >
-              <div
-                className="card mb-3"
-                style={{ maxWidth: 540 }}
-                key={quiz.id}
-              >
+              <div className="card mb-3" style={{ maxWidth: 540 }}>
                 <div className="row g-0">
                   <div className="col-md-4">
                     <iframe
@@ -56,7 +53,10 @@ function Quizes (){
                       <span>Final Score : {quiz.score}</span>
                       <p className="card-text">
                         <small className="text-muted">
-                          Last updated 3 mins ago
+                          Created {quiz.created}
+                        </small>
+                        <small className="text-muted">
+                          Last updated {quiz.modified}
                         </small>
                       </p>
                     </div>
