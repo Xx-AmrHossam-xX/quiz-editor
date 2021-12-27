@@ -1,0 +1,24 @@
+h1 {
+  text-align: center;
+}
+.quizes-wrapper {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto;
+  margin: auto;
+  grid-column-gap: 30px;
+}
+.quiz-button {
+  background-color: transparent;
+  outline: none;
+  padding: 0px;
+  border: 0px;
+}
+small {
+  display: block;
+}
+@media screen and (max-width: 600px) {
+  .quizes-wrapper {
+    grid-template-columns: auto;
+  }
+}
