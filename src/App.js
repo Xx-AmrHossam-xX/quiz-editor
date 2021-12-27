@@ -1,8 +1,11 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+// Router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+// pages
 import Quizes from "./pages/Quizes/Quizes";
 import SaveQuiz from "./pages/SaveQuiz/SaveQuiz";
+// CSS
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App (){
   return (

@@ -1,0 +1,8 @@
+.no-quiz-icon {
+  display: block;
+  text-align: center;
+  font-size: 3rem;
+}
+.no-quiz-icon + p {
+  text-align: center;
+}

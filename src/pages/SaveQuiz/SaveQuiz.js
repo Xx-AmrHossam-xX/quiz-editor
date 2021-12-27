@@ -1,5 +1,7 @@
-import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+// Router
+import { useParams, useNavigate } from "react-router-dom";
+// Libraries
 import {
   Nav,
   NavItem,
@@ -10,11 +12,15 @@ import {
   Col,
 } from "reactstrap";
 import classNames from "classnames";
+// Components
 import Info from "./Info/Info";
 import Questions from "./Questions/Questions";
+// Redux
 import { shallowEqual, useSelector, useDispatch } from "react-redux";
 import { setCurrentQuiz, addQuiz, editQuiz } from "../../redux/Quizes/actions";
+// Utilities
 import emptyQuizObject from "../../utilities/constants";
+// Css
 import "./SaveQuiz.css";
 
 function SaveQuiz (){
@@ -28,11 +34,12 @@ function SaveQuiz (){
   );
   // DISPATCH
   const dispatch = useDispatch();
-
+  // Router
   let navigate = useNavigate();
   let { quizId } = useParams();
 
   const [ activeTab, setActiveTab ] = useState("1");
+
   useEffect(() => {
     if (quizId) {
       let requiredQuiz = quizes.find(quiz => quiz.id === quizId);
@@ -57,9 +64,11 @@ function SaveQuiz (){
   };
   return (
     <div>
-      <h1>SaveQuiz</h1>
-      {!quizId ? <h1>create</h1> : <h1>edit</h1>}
-      <button onClick={() => save()} className="save-button">
+      {!quizId ? <h1>Create</h1> : <h1>Edit</h1>}
+      <button
+        className="btn btn-large btn-success save-button"
+        onClick={() => save()}
+      >
         Save
       </button>
       {Object.keys(currentQuiz).length > 0 && (

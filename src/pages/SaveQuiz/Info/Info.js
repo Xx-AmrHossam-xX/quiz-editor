@@ -1,24 +1,11 @@
-import { useState } from "react";
-import {
-  Form,
-  FormGroup,
-  Label,
-  Col,
-  Input,
-  FormText,
-  Button,
-} from "reactstrap";
-import { shallowEqual, useSelector, useDispatch } from "react-redux";
-import { setCurrentQuiz } from "../../../redux/Quizes/actions";
+// Libraries
+import { Form, FormGroup, Label, Col, Input, FormText } from "reactstrap";
 import update from "immutability-helper";
+// Redux
+import { useDispatch } from "react-redux";
+import { setCurrentQuiz } from "../../../redux/Quizes/actions";
+
 function Info ({ currentQuiz }){
-  // //Use Selector
-  // const { currentQuiz } = useSelector(
-  //   state => ({
-  //     currentQuiz: state.quizes.currentQuiz,
-  //   }),
-  //   shallowEqual
-  // );
   // DISPATCH
   const dispatch = useDispatch();
   const change = (property, value) => {
@@ -29,7 +16,7 @@ function Info ({ currentQuiz }){
   };
   return (
     <div>
-      <Form>
+      <Form className="p-3">
         <FormGroup row>
           <Label htmlFor="title" sm={2}>
             Title

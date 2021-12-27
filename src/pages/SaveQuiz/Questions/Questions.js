@@ -1,16 +1,9 @@
-import { useState } from "react";
-import {
-  Form,
-  FormGroup,
-  Label,
-  Col,
-  Input,
-  FormText,
-  Button,
-} from "reactstrap";
-import { shallowEqual, useSelector, useDispatch } from "react-redux";
-import { setCurrentQuiz } from "../../../redux/Quizes/actions";
+// libraries
+import { Form, FormGroup, Label, Col, Input } from "reactstrap";
 import update from "immutability-helper";
+// redux
+import { useDispatch } from "react-redux";
+import { setCurrentQuiz } from "../../../redux/Quizes/actions";
 
 function Questions ({ currentQuiz }){
   // DISPATCH
@@ -101,7 +94,7 @@ function Questions ({ currentQuiz }){
     <div>
       {currentQuiz.questions_answers.map((questions_answersObj, key) => (
         <div key={`question-${key}`}>
-          <Form>
+          <Form className="p-3">
             <FormGroup row>
               <Label htmlFor="question-text" sm={2}>
                 Text
@@ -152,12 +145,11 @@ function Questions ({ currentQuiz }){
           <ol className="list-group list-group-numbered">
             {questions_answersObj.answers.map((answer, answerKey) => (
               <li
-                className="list-group-item"
+                className="list-group-item align-items-center d-flex p-3"
                 key={`answer-${key}-${answerKey}`}
               >
                 <Input
-                  //   id="incorrect-feedback"
-                  //   name="incorrect-feedback"
+                  className="mx-2"
                   placeholder="answer"
                   type="text"
                   value={answer.text}
@@ -167,7 +159,7 @@ function Questions ({ currentQuiz }){
               </li>
             ))}
           </ol>
-          <h5>Correct Answer :</h5>
+          <h5 className="my-2">Correct Answer :</h5>
           {questions_answersObj.answers.map((answer, answerKey) => (
             <div
               className="form-check form-check-inline"
@@ -191,11 +183,21 @@ function Questions ({ currentQuiz }){
               </label>
             </div>
           ))}
-          <button onClick={() => addAnswer(key)}>Add Answer</button>
+          <button
+            className="btn btn-sm btn-primary "
+            onClick={() => addAnswer(key)}
+          >
+            Add Answer
+          </button>
           <hr />
         </div>
       ))}
-      <button onClick={() => addQuestion()}>Add Question</button>
+      <button
+        className="btn btn-primary m-auto d-block"
+        onClick={() => addQuestion()}
+      >
+        Add Question
+      </button>
     </div>
   );
 }
