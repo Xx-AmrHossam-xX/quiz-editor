@@ -1,4 +1,4 @@
-export const emptyQuizObject = {
+const emptyQuizObject = {
   created: "",
   description: "",
   id: "",
@@ -47,3 +47,4 @@ export const emptyQuizObject = {
   title: "",
   url: "",
 };
+export default emptyQuizObject;

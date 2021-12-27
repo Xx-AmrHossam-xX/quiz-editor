@@ -14,7 +14,7 @@ import Info from "./Info/Info";
 import Questions from "./Questions/Questions";
 import { shallowEqual, useSelector, useDispatch } from "react-redux";
 import { setCurrentQuiz, addQuiz, editQuiz } from "../../redux/Quizes/actions";
-import { emptyQuizObject } from "../../utilities/constants";
+import emptyQuizObject from "../../utilities/constants";
 import "./SaveQuiz.css";
 
 function SaveQuiz (){

@@ -43,8 +43,9 @@ function quizes (state = defaultVal, action){
     case EDIT_QUIZ:
       let requiredIndex;
       for (let i = 0; i < state.quizes.length; i++) {
-        if (state.quizes[i] === action.quizId) {
+        if (state.quizes[i].id === action.quizId) {
           requiredIndex = i;
+          console.log(requiredIndex, " requiredIndex - inside if condition");
           break;
         }
       }
